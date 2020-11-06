@@ -1,20 +1,27 @@
 {
   "name": "frontend-data",
   "version": "1.0.0",
-  "description": "functional-programming",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "parcel static/index.html",
     "build": "parcel build static/index.html"
   },
-  "repository": "https://github.com/RowinRuizendaal/frontend-data.git",
-  "author": "Rowin Ruizendaal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RowinRuizendaal/frontend-data.git"
+  },
+  "author": "RowinRuizendaal",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RowinRuizendaal/frontend-data/issues"
+  },
+  "homepage": "https://github.com/RowinRuizendaal/frontend-data#readme",
   "dependencies": {
     "axios": "^0.21.0",
     "d3": "^6.2.0",
     "express": "^4.17.1",
-    "fs": "^0.0.1-security",
+    "fs": "0.0.1-security",
     "nodemon": "^2.0.6",
     "topojson": "^3.0.2"
   },
