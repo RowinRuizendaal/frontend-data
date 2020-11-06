@@ -3,12 +3,12 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-  background: #24305E
+  background: #1a1a2e;
 } 
 
 path {
-  fill: #A8D0E6;
-  stroke: #FFFFFF;
+  fill: #22224a;
+  stroke: #537399;
   stroke-opacity: 0.1; 
 }
 
@@ -23,9 +23,18 @@ path {
     display: inline-block;
     vertical-align: middle;
     margin-left: 70%;
-    background: #374785;
-    z-index: 9999;
+    background: #22224a;
     top: 0;
     position: fixed;
 
+}
+
+.tooltip {
+  font-family: 'Monsterrat', sans-serif;
+  background: #22224a;
+  text-align: center;
+  font-size: 1rem;
+  height: auto;
+  width: 10rem;
+  color: white;
 }

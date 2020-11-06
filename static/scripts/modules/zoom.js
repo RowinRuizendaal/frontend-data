@@ -36,7 +36,7 @@ nlData('https://cartomap.github.io/nl/wgs84/gemeente_2020.topojson').then((data)
         const [[x0, y0], [x1, y1]] = path.bounds(d);
         event.stopPropagation();
         gemeentes.transition().style('fill', null);
-        select(this).transition().style('fill', 'red');
+        select(this).transition().style('fill', 'rgb(60,179,113)');
         svg
           .transition()
           .duration(750)
