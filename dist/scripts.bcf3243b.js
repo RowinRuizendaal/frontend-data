@@ -34496,7 +34496,7 @@ var tooltip = (0, _d.select)('body').append('div').style('position', 'absolute')
 exports.tooltip = tooltip;
 
 var handleMouseOver = function handleMouseOver(d, i) {
-  tooltip.append('p').text("AreaMangerId: ".concat(i.areamanagerid)), tooltip.style("visibility", "visible").append('p').text("Prijs per uur: \u20AC".concat(i.pricePerHour)), tooltip.style("visibility", "visible");
+  tooltip.append('p').text(i.areadesc), tooltip.style("visibility", "visible");
 };
 
 exports.handleMouseOver = handleMouseOver;
@@ -34521,21 +34521,49 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.dots = void 0;
 
-var _d = require("d3");
+var _d2 = require("d3");
 
 var _tooltipMouse = require("./tooltip-mouse");
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 var dots = function dots(data) {
-  var g = (0, _d.select)("g");
-  var projection = (0, _d.geoMercator)().scale(6000).center([5.116667, 52.17]);
-  g.selectAll('circle').data(data).enter().append('circle').attr('class', 'circles').attr("cx", function (d) {
+  var g = (0, _d2.select)('g');
+  var projection = (0, _d2.geoMercator)().scale(6000).center([5.116667, 52.17]);
+  var dots = g.selectAll('circle').data(data).enter().append('circle').attr('class', 'circles').attr('cx', function (d) {
     return projection([d.location.longitude, d.location.latitude])[0];
-  }).attr("cy", function (d) {
+  }).attr('cy', function (d) {
     return projection([d.location.longitude, d.location.latitude])[1];
-  }).attr("r", '4px').attr('fill', '#e94560').on("mouseover", _tooltipMouse.handleMouseOver).on("mousemove", _tooltipMouse.mouseMove).on("mouseout", _tooltipMouse.handleMouseOut);
+  }).attr('r', '4px').attr('fill', '#e94560').on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut).on('click', showDetail);
+  (0, _d2.select)('.filter select').selectAll('myoptions').data(data).enter().append('option').attr('class', 'huh').text(function (d) {
+    return d.areadesc;
+  });
+  console.log(dots);
 };
 
 exports.dots = dots;
+
+var showDetail = function showDetail(d, i) {
+  (0, _d2.selectAll)('.Navigation .details .test').remove();
+  var toArray = Object.entries(i);
+  toArray.forEach(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+        key = _ref2[0],
+        value = _ref2[1];
+
+    (0, _d2.select)('.details').append('p').attr('class', 'test').text("".concat(key, " : ").concat(value));
+  });
+};
 },{"d3":"../node_modules/d3/index.js","./tooltip-mouse":"scripts/modules/tooltip-mouse.js"}],"scripts/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -34549,8 +34577,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var endPoint = 'https://api.npoint.io/eea687fd3a4f0e15e9f1';
-fetchData(endPoint);
+var endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/43295f6871191c44dd84351a5cff507d/raw/bd92d2058a992aa0839622d5c23d0a377f334647/betaalmethode.json';
 
 function fetchData(_x) {
   return _fetchData.apply(this, arguments);
@@ -34589,6 +34616,8 @@ function _fetchData() {
   }));
   return _fetchData.apply(this, arguments);
 }
+
+fetchData(endPoint);
 },{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./modules/zoom":"scripts/modules/zoom.js","./modules/map-dots":"scripts/modules/map-dots.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -34617,7 +34646,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59862" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61592" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
