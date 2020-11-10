@@ -34453,7 +34453,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   var projection = (0, _d2.geoMercator)().scale(6000).center([5.116667, 52.17]);
   var pathGenerator = path.projection(projection);
   var gemeentes = g.append('g').attr('fill', '#444').attr('cursor', 'pointer').selectAll('path').data((0, _topojson.feature)(data, data.objects.gemeente_2020).features).join('path').on('click', clicked).attr('d', path);
-  svg.call(_d2.zoom);
+  svg.call(d3zoom);
+
+  function reset() {
+    gemeentes.transition().style('fill', null);
+    svg.transition().duration(750).call(d3zoom.transform, _d2.zoomIdentity, (0, _d2.zoomTransform)(svg.node()).invert([width / 2, height / 2]));
+  }
 
   function clicked(event, d) {
     var _path$bounds = path.bounds(d),
@@ -34476,11 +34481,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     g.attr('transform', transform);
     g.attr('stroke-width', 1 / transform.k);
   }
-
-  function reset() {
-    gemeentes.transition().style('fill', null);
-    svg.transition().duration(750).call(d3zoom.transform, _d2.zoomIdentity, (0, _d2.zoomTransform)(svg.node()).invert([width / 2, height / 2]));
-  }
 });
 },{"d3":"../node_modules/d3/index.js","topojson":"../node_modules/topojson/index.js","./nltopo":"scripts/modules/nltopo.js"}],"scripts/modules/tooltip-mouse.js":[function(require,module,exports) {
 "use strict";
@@ -34496,12 +34496,12 @@ var tooltip = (0, _d.select)('body').append('div').style('position', 'absolute')
 exports.tooltip = tooltip;
 
 var handleMouseOver = function handleMouseOver(d, i) {
-  tooltip.append('p').text(i.areadesc), tooltip.style("visibility", "visible");
+  tooltip.append('p').text(i.areadesc), tooltip.style('visibility', 'visible');
 };
 
 exports.handleMouseOver = handleMouseOver;
 
-var mouseMove = function mouseMove(d, i) {
+var mouseMove = function mouseMove(event, d, i) {
   tooltip.style('top', event.pageY - 10 + 'px').style('left', event.pageX + 10 + 'px');
 };
 
@@ -34540,31 +34540,45 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var dots = function dots(data) {
   var g = (0, _d2.select)('g');
   var projection = (0, _d2.geoMercator)().scale(6000).center([5.116667, 52.17]);
-  var dots = g.selectAll('circle').data(data).enter().append('circle').attr('class', 'circles').attr('cx', function (d) {
+  g.selectAll('circle').data(data).enter().append('circle').attr('class', 'circles').attr('cx', function (d) {
     return projection([d.location.longitude, d.location.latitude])[0];
   }).attr('cy', function (d) {
     return projection([d.location.longitude, d.location.latitude])[1];
   }).attr('r', '4px').attr('fill', '#e94560').on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut).on('click', showDetail);
-  (0, _d2.select)('.filter select').selectAll('myoptions').data(data).enter().append('option').attr('class', 'huh').text(function (d) {
-    return d.areadesc;
-  });
-  console.log(dots);
 };
 
 exports.dots = dots;
 
 var showDetail = function showDetail(d, i) {
-  (0, _d2.selectAll)('.Navigation .details .test').remove();
+  (0, _d2.selectAll)('.description').remove();
   var toArray = Object.entries(i);
+  toArray.pop();
   toArray.forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         key = _ref2[0],
         value = _ref2[1];
 
-    (0, _d2.select)('.details').append('p').attr('class', 'test').text("".concat(key, " : ").concat(value));
+    (0, _d2.select)('.details').append('p').attr('class', 'description').text("".concat(key, " : ").concat(value));
   });
 };
-},{"d3":"../node_modules/d3/index.js","./tooltip-mouse":"scripts/modules/tooltip-mouse.js"}],"scripts/index.js":[function(require,module,exports) {
+},{"d3":"../node_modules/d3/index.js","./tooltip-mouse":"scripts/modules/tooltip-mouse.js"}],"scripts/modules/filter.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.filter = void 0;
+
+var _d = require("d3");
+
+var filter = function filter(data) {
+  (0, _d.select)('.filter select').selectAll('myoptions').data(data).enter().append('option').text(function (d) {
+    return d.areadesc;
+  });
+};
+
+exports.filter = filter;
+},{"d3":"../node_modules/d3/index.js"}],"scripts/index.js":[function(require,module,exports) {
 "use strict";
 
 require("regenerator-runtime/runtime");
@@ -34573,11 +34587,13 @@ var _zoom = require("./modules/zoom");
 
 var _mapDots = require("./modules/map-dots");
 
+var _filter = require("./modules/filter");
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/43295f6871191c44dd84351a5cff507d/raw/bd92d2058a992aa0839622d5c23d0a377f334647/betaalmethode.json';
+var endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/43295f6871191c44dd84351a5cff507d/raw/363b36215b024cfe482cdafbde371553444954d5/betaalmethode.json';
 
 function fetchData(_x) {
   return _fetchData.apply(this, arguments);
@@ -34606,8 +34622,9 @@ function _fetchData() {
           case 8:
             data = _context.sent;
             (0, _mapDots.dots)(data);
+            (0, _filter.filter)(data);
 
-          case 10:
+          case 11:
           case "end":
             return _context.stop();
         }
@@ -34618,7 +34635,7 @@ function _fetchData() {
 }
 
 fetchData(endPoint);
-},{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./modules/zoom":"scripts/modules/zoom.js","./modules/map-dots":"scripts/modules/map-dots.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./modules/zoom":"scripts/modules/zoom.js","./modules/map-dots":"scripts/modules/map-dots.js","./modules/filter":"scripts/modules/filter.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -34646,7 +34663,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61592" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51394" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
