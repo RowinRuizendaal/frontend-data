@@ -34453,6 +34453,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   var projection = (0, _d2.geoMercator)().scale(6000).center([5.116667, 52.17]);
   var pathGenerator = path.projection(projection);
   var gemeentes = g.append('g').attr('fill', '#444').attr('cursor', 'pointer').selectAll('path').data((0, _topojson.feature)(data, data.objects.gemeente_2020).features).join('path').on('click', clicked).attr('d', path);
+  gemeentes.append('title').text(function (d) {
+    return "".concat(d.properties.statnaam);
+  });
   svg.call(d3zoom);
 
   function reset() {
@@ -34513,17 +34516,15 @@ var handleMouseOut = function handleMouseOut(d, i) {
 };
 
 exports.handleMouseOut = handleMouseOut;
-},{"d3":"../node_modules/d3/index.js"}],"scripts/modules/map-dots.js":[function(require,module,exports) {
+},{"d3":"../node_modules/d3/index.js"}],"scripts/modules/show-detail.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.dots = void 0;
+exports.showDetail = void 0;
 
 var _d2 = require("d3");
-
-var _tooltipMouse = require("./tooltip-mouse");
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -34537,21 +34538,10 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var dots = function dots(data) {
-  var g = (0, _d2.select)('g');
-  var projection = (0, _d2.geoMercator)().scale(6000).center([5.116667, 52.17]);
-  g.selectAll('circle').data(data).enter().append('circle').attr('class', 'circles').attr('cx', function (d) {
-    return projection([d.location.longitude, d.location.latitude])[0];
-  }).attr('cy', function (d) {
-    return projection([d.location.longitude, d.location.latitude])[1];
-  }).attr('r', '4px').attr('fill', '#e94560').on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut).on('click', showDetail);
-};
-
-exports.dots = dots;
-
 var showDetail = function showDetail(d, i) {
   (0, _d2.selectAll)('.description').remove();
   var toArray = Object.entries(i);
+  console.log(toArray);
   toArray.pop();
   toArray.forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
@@ -34561,7 +34551,34 @@ var showDetail = function showDetail(d, i) {
     (0, _d2.select)('.details').append('p').attr('class', 'description').text("".concat(key, " : ").concat(value));
   });
 };
-},{"d3":"../node_modules/d3/index.js","./tooltip-mouse":"scripts/modules/tooltip-mouse.js"}],"scripts/modules/filter.js":[function(require,module,exports) {
+
+exports.showDetail = showDetail;
+},{"d3":"../node_modules/d3/index.js"}],"scripts/modules/map-dots.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.dots = void 0;
+
+var _d = require("d3");
+
+var _tooltipMouse = require("./tooltip-mouse");
+
+var _showDetail = require("./show-detail");
+
+var dots = function dots(data) {
+  var g = (0, _d.select)('g');
+  var projection = (0, _d.geoMercator)().scale(6000).center([5.116667, 52.17]);
+  g.selectAll('circle').data(data).enter().append('circle').attr('class', 'circles').attr('cx', function (d) {
+    return projection([d.location.longitude, d.location.latitude])[0];
+  }).attr('cy', function (d) {
+    return projection([d.location.longitude, d.location.latitude])[1];
+  }).attr('r', '4px').attr('fill', '#e94560').on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut).on('click', _showDetail.showDetail);
+};
+
+exports.dots = dots;
+},{"d3":"../node_modules/d3/index.js","./tooltip-mouse":"scripts/modules/tooltip-mouse.js","./show-detail":"scripts/modules/show-detail.js"}],"scripts/modules/filter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34571,14 +34588,23 @@ exports.filter = void 0;
 
 var _d = require("d3");
 
+var _showDetail = require("./show-detail");
+
 var filter = function filter(data) {
-  (0, _d.select)('.filter select').selectAll('myoptions').data(data).enter().append('option').text(function (d) {
+  (0, _d.select)('.filter select').selectAll('myoptions').data(data).enter().append('option').attr('value', function (d, i) {
+    return i;
+  }).text(function (d) {
     return d.areadesc;
+  });
+  (0, _d.select)('.select').data(data).on('change', function (d, i) {
+    var index = data[(0, _d.select)(this).property('value')];
+    console.log(index);
+    index ? (0, _showDetail.showDetail)(d, index) : console.log('Not a valid index');
   });
 };
 
 exports.filter = filter;
-},{"d3":"../node_modules/d3/index.js"}],"scripts/index.js":[function(require,module,exports) {
+},{"d3":"../node_modules/d3/index.js","./show-detail":"scripts/modules/show-detail.js"}],"scripts/index.js":[function(require,module,exports) {
 "use strict";
 
 require("regenerator-runtime/runtime");
@@ -34663,7 +34689,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51394" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52502" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

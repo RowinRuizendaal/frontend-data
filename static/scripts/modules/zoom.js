@@ -41,6 +41,10 @@ nlData('https://cartomap.github.io/nl/wgs84/gemeente_2020.topojson').then((data)
     .on('click', clicked)
     .attr('d', path)
 
+    gemeentes
+    .append('title')
+    .text((d) => `${d.properties.statnaam}`)
+
   svg.call(d3zoom);
 
   function reset() {

@@ -1,5 +1,6 @@
 import { select, geoMercator, selectAll } from 'd3'
 import {handleMouseOver, mouseMove, handleMouseOut } from './tooltip-mouse'
+import { showDetail } from './show-detail'
 
 export const dots = (data) => {
     const g = select('g');
@@ -21,17 +22,5 @@ export const dots = (data) => {
         .on('mouseout', handleMouseOut)
         .on('click', showDetail)
 }
-
-const showDetail = (d, i) => {
-    selectAll('.description').remove()
-    const toArray = Object.entries(i)
-    toArray.pop()
-    toArray.forEach(([key, value]) => {
-          select('.details')
-            .append('p')
-            .attr('class', 'description')
-            .text(`${key} : ${value}`)
-      });
-  };
 
 
