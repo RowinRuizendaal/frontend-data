@@ -21,15 +21,16 @@ nlData('https://cartomap.github.io/nl/wgs84/gemeente_2020.topojson').then((data)
   const width = 975;
   const height = 610;
 
-  const svg = select("svg")
+  const svg = 
+    select("svg")
     .attr("viewBox", [0, 0, width, height])
     .on("click", reset);
 
 
   const g = svg.append('g');
-
   const projection = geoMercator().scale(6000).center([5.116667, 52.17]);
   const pathGenerator = path.projection(projection);
+
   const gemeentes = g
     .append('g')
     .attr('fill', '#444')
@@ -40,14 +41,22 @@ nlData('https://cartomap.github.io/nl/wgs84/gemeente_2020.topojson').then((data)
     .on('click', clicked)
     .attr('d', path)
 
+  svg.call(d3zoom);
 
-  svg.call(zoom);
+  function reset() {
+    gemeentes.transition().style('fill', null);
+    svg
+      .transition()
+      .duration(750)
+      .call(
+        d3zoom.transform,
+        zoomIdentity,
+        zoomTransform(svg.node()).invert([width / 2, height / 2])
+      );
+  }
 
   function clicked(event, d) {
-    const [
-      [x0, y0],
-      [x1, y1]
-    ] = path.bounds(d);
+    const [[x0, y0],[x1, y1]] = path.bounds(d);
     event.stopPropagation();
     gemeentes.transition().style('fill', null);
     select(this).transition().style('fill', 'rgb(60,179,113)');
@@ -67,22 +76,9 @@ nlData('https://cartomap.github.io/nl/wgs84/gemeente_2020.topojson').then((data)
   }
 
   function zoomed(event) {
-    const {
-      transform
-    } = event;
+    const { transform } = event;
     g.attr('transform', transform);
     g.attr('stroke-width', 1 / transform.k);
   }
 
-  function reset() {
-    gemeentes.transition().style('fill', null);
-    svg
-      .transition()
-      .duration(750)
-      .call(
-        d3zoom.transform,
-        zoomIdentity,
-        zoomTransform(svg.node()).invert([width / 2, height / 2])
-      );
-  }
 });

@@ -1,12 +1,12 @@
-import { select, geoMercator, selectAll, text } from 'd3'
-import {tooltip, handleMouseOver, mouseMove, handleMouseOut } from './tooltip-mouse'
+import { select, geoMercator, selectAll } from 'd3'
+import {handleMouseOver, mouseMove, handleMouseOut } from './tooltip-mouse'
 
 export const dots = (data) => {
     const g = select('g');
     const projection = geoMercator().scale(6000).center([5.116667, 52.17]);
 
 
-    const dots = g
+     g
         .selectAll('circle')
         .data(data)
         .enter()
@@ -19,29 +19,19 @@ export const dots = (data) => {
         .on('mouseover', handleMouseOver)
         .on('mousemove', mouseMove)
         .on('mouseout', handleMouseOut)
-        .on('click', showDetail)      
-        
-
-
-    select('.filter select')
-    .selectAll('myoptions')
-    .data(data)
-    .enter()
-    .append('option')
-    .attr('class', 'huh')
-    .text(function(d){ return d.areadesc })
-
-   console.log(dots) 
+        .on('click', showDetail)
 }
 
 const showDetail = (d, i) => {
-    selectAll('.Navigation .details .test').remove()
+    selectAll('.description').remove()
     const toArray = Object.entries(i)
+    toArray.pop()
     toArray.forEach(([key, value]) => {
           select('.details')
             .append('p')
-            .attr('class', 'test')
+            .attr('class', 'description')
             .text(`${key} : ${value}`)
       });
   };
+
 

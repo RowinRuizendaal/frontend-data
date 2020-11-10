@@ -10,10 +10,10 @@ export const tooltip = select('body')
 export const handleMouseOver = (d,i) => {
     tooltip
     .append('p')
-     .text(i.areadesc) , tooltip.style("visibility", "visible")
+     .text(i.areadesc) , tooltip.style('visibility', 'visible')
 }
 
-export const mouseMove = (d,i) => {
+export const mouseMove = (event,d,i) => {
     tooltip.style('top', (event.pageY-10)+'px').style('left',(event.pageX+10)+'px')  
 }
 
