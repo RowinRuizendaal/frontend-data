@@ -31629,7 +31629,7 @@ Object.keys(_d3Zoom).forEach(function (key) {
     }
   });
 });
-},{"./dist/package.js":"../node_modules/d3/dist/package.js","d3-array":"../node_modules/d3-array/src/index.js","d3-axis":"../node_modules/d3-axis/src/index.js","d3-brush":"../node_modules/d3-brush/src/index.js","d3-chord":"../node_modules/d3-chord/src/index.js","d3-color":"../node_modules/d3-color/src/index.js","d3-contour":"../node_modules/d3-contour/src/index.js","d3-delaunay":"../node_modules/d3-delaunay/src/index.js","d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-drag":"../node_modules/d3-drag/src/index.js","d3-dsv":"../node_modules/d3-dsv/src/index.js","d3-ease":"../node_modules/d3-ease/src/index.js","d3-fetch":"../node_modules/d3-fetch/src/index.js","d3-force":"../node_modules/d3-force/src/index.js","d3-format":"../node_modules/d3-format/src/index.js","d3-geo":"../node_modules/d3-geo/src/index.js","d3-hierarchy":"../node_modules/d3-hierarchy/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-path":"../node_modules/d3-path/src/index.js","d3-polygon":"../node_modules/d3-polygon/src/index.js","d3-quadtree":"../node_modules/d3-quadtree/src/index.js","d3-random":"../node_modules/d3-random/src/index.js","d3-scale":"../node_modules/d3-scale/src/index.js","d3-scale-chromatic":"../node_modules/d3-scale-chromatic/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","d3-shape":"../node_modules/d3-shape/src/index.js","d3-time":"../node_modules/d3-time/src/index.js","d3-time-format":"../node_modules/d3-time-format/src/index.js","d3-timer":"../node_modules/d3-timer/src/index.js","d3-transition":"../node_modules/d3-transition/src/index.js","d3-zoom":"../node_modules/d3-zoom/src/index.js"}],"../node_modules/topojson/node_modules/topojson-client/src/identity.js":[function(require,module,exports) {
+},{"./dist/package.js":"../node_modules/d3/dist/package.js","d3-array":"../node_modules/d3-array/src/index.js","d3-axis":"../node_modules/d3-axis/src/index.js","d3-brush":"../node_modules/d3-brush/src/index.js","d3-chord":"../node_modules/d3-chord/src/index.js","d3-color":"../node_modules/d3-color/src/index.js","d3-contour":"../node_modules/d3-contour/src/index.js","d3-delaunay":"../node_modules/d3-delaunay/src/index.js","d3-dispatch":"../node_modules/d3-dispatch/src/index.js","d3-drag":"../node_modules/d3-drag/src/index.js","d3-dsv":"../node_modules/d3-dsv/src/index.js","d3-ease":"../node_modules/d3-ease/src/index.js","d3-fetch":"../node_modules/d3-fetch/src/index.js","d3-force":"../node_modules/d3-force/src/index.js","d3-format":"../node_modules/d3-format/src/index.js","d3-geo":"../node_modules/d3-geo/src/index.js","d3-hierarchy":"../node_modules/d3-hierarchy/src/index.js","d3-interpolate":"../node_modules/d3-interpolate/src/index.js","d3-path":"../node_modules/d3-path/src/index.js","d3-polygon":"../node_modules/d3-polygon/src/index.js","d3-quadtree":"../node_modules/d3-quadtree/src/index.js","d3-random":"../node_modules/d3-random/src/index.js","d3-scale":"../node_modules/d3-scale/src/index.js","d3-scale-chromatic":"../node_modules/d3-scale-chromatic/src/index.js","d3-selection":"../node_modules/d3-selection/src/index.js","d3-shape":"../node_modules/d3-shape/src/index.js","d3-time":"../node_modules/d3-time/src/index.js","d3-time-format":"../node_modules/d3-time-format/src/index.js","d3-timer":"../node_modules/d3-timer/src/index.js","d3-transition":"../node_modules/d3-transition/src/index.js","d3-zoom":"../node_modules/d3-zoom/src/index.js"}],"../node_modules/topojson-client/src/identity.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31640,7 +31640,7 @@ exports.default = _default;
 function _default(x) {
   return x;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-client/src/transform.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-client/src/transform.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31673,7 +31673,7 @@ function _default(transform) {
     return output;
   };
 }
-},{"./identity":"../node_modules/topojson/node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson/node_modules/topojson-client/src/bbox.js":[function(require,module,exports) {
+},{"./identity":"../node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson-client/src/bbox.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31737,7 +31737,7 @@ function _default(topology) {
 
   return [x0, y0, x1, y1];
 }
-},{"./transform":"../node_modules/topojson/node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson/node_modules/topojson-client/src/reverse.js":[function(require,module,exports) {
+},{"./transform":"../node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson-client/src/reverse.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31752,7 +31752,7 @@ function _default(array, n) {
 
   while (i < --j) t = array[i], array[i++] = array[j], array[j] = t;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-client/src/feature.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-client/src/feature.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31888,7 +31888,7 @@ function object(topology, o) {
 
   return geometry(o);
 }
-},{"./reverse":"../node_modules/topojson/node_modules/topojson-client/src/reverse.js","./transform":"../node_modules/topojson/node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson/node_modules/topojson-client/src/stitch.js":[function(require,module,exports) {
+},{"./reverse":"../node_modules/topojson-client/src/reverse.js","./transform":"../node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson-client/src/stitch.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31978,7 +31978,7 @@ function _default(topology, arcs) {
   });
   return fragments;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-client/src/mesh.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-client/src/mesh.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32060,7 +32060,7 @@ function extractArcs(topology, object, filter) {
   });
   return arcs;
 }
-},{"./feature":"../node_modules/topojson/node_modules/topojson-client/src/feature.js","./stitch":"../node_modules/topojson/node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson/node_modules/topojson-client/src/merge.js":[function(require,module,exports) {
+},{"./feature":"../node_modules/topojson-client/src/feature.js","./stitch":"../node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson-client/src/merge.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32186,7 +32186,7 @@ function mergeArcs(topology, objects) {
     })
   };
 }
-},{"./feature":"../node_modules/topojson/node_modules/topojson-client/src/feature.js","./stitch":"../node_modules/topojson/node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson/node_modules/topojson-client/src/bisect.js":[function(require,module,exports) {
+},{"./feature":"../node_modules/topojson-client/src/feature.js","./stitch":"../node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson-client/src/bisect.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32205,7 +32205,7 @@ function _default(a, x) {
 
   return lo;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-client/src/neighbors.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-client/src/neighbors.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32270,7 +32270,7 @@ function _default(objects) {
 
   return neighbors;
 }
-},{"./bisect":"../node_modules/topojson/node_modules/topojson-client/src/bisect.js"}],"../node_modules/topojson/node_modules/topojson-client/src/untransform.js":[function(require,module,exports) {
+},{"./bisect":"../node_modules/topojson-client/src/bisect.js"}],"../node_modules/topojson-client/src/untransform.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32305,7 +32305,7 @@ function _default(transform) {
     return output;
   };
 }
-},{"./identity":"../node_modules/topojson/node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson/node_modules/topojson-client/src/quantize.js":[function(require,module,exports) {
+},{"./identity":"../node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson-client/src/quantize.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32411,7 +32411,7 @@ function _default(topology, transform) {
     arcs: topology.arcs.map(quantizeArc)
   };
 }
-},{"./bbox":"../node_modules/topojson/node_modules/topojson-client/src/bbox.js","./untransform":"../node_modules/topojson/node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson/node_modules/topojson-client/index.js":[function(require,module,exports) {
+},{"./bbox":"../node_modules/topojson-client/src/bbox.js","./untransform":"../node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson-client/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32499,7 +32499,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./src/bbox":"../node_modules/topojson/node_modules/topojson-client/src/bbox.js","./src/feature":"../node_modules/topojson/node_modules/topojson-client/src/feature.js","./src/mesh":"../node_modules/topojson/node_modules/topojson-client/src/mesh.js","./src/merge":"../node_modules/topojson/node_modules/topojson-client/src/merge.js","./src/neighbors":"../node_modules/topojson/node_modules/topojson-client/src/neighbors.js","./src/quantize":"../node_modules/topojson/node_modules/topojson-client/src/quantize.js","./src/transform":"../node_modules/topojson/node_modules/topojson-client/src/transform.js","./src/untransform":"../node_modules/topojson/node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson/node_modules/topojson-server/src/bounds.js":[function(require,module,exports) {
+},{"./src/bbox":"../node_modules/topojson-client/src/bbox.js","./src/feature":"../node_modules/topojson-client/src/feature.js","./src/mesh":"../node_modules/topojson-client/src/mesh.js","./src/merge":"../node_modules/topojson-client/src/merge.js","./src/neighbors":"../node_modules/topojson-client/src/neighbors.js","./src/quantize":"../node_modules/topojson-client/src/quantize.js","./src/transform":"../node_modules/topojson-client/src/transform.js","./src/untransform":"../node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson-server/src/bounds.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32565,7 +32565,7 @@ function _default(objects) {
 
   return x1 >= x0 && y1 >= y0 ? [x0, y0, x1, y1] : undefined;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/hashset.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/hash/hashset.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32632,7 +32632,7 @@ function _default(size, hash, equal, type, empty) {
     values: values
   };
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/hash/hashmap.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32719,7 +32719,7 @@ function _default(size, hash, equal, keyType, keyEmpty, valueType) {
     keys: keys
   };
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/point-equal.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/hash/point-equal.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32730,7 +32730,7 @@ exports.default = _default;
 function _default(pointA, pointB) {
   return pointA[0] === pointB[0] && pointA[1] === pointB[1];
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/hash/point-hash.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/hash/point-hash.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32749,7 +32749,7 @@ function _default(point) {
   hash = hash << 5 ^ hash >> 7 ^ uints[2] ^ uints[3];
   return hash & 0x7fffffff;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/join.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/join.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32884,7 +32884,7 @@ function _default(topology) {
 
   return junctionByPoint;
 }
-},{"./hash/hashset":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashset.js","./hash/hashmap":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js","./hash/point-equal":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-equal.js","./hash/point-hash":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-hash.js"}],"../node_modules/topojson/node_modules/topojson-server/src/cut.js":[function(require,module,exports) {
+},{"./hash/hashset":"../node_modules/topojson-server/src/hash/hashset.js","./hash/hashmap":"../node_modules/topojson-server/src/hash/hashmap.js","./hash/point-equal":"../node_modules/topojson-server/src/hash/point-equal.js","./hash/point-hash":"../node_modules/topojson-server/src/hash/point-hash.js"}],"../node_modules/topojson-server/src/cut.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -32966,7 +32966,7 @@ function reverse(array, start, end) {
     t = array[start], array[start] = array[end], array[end] = t;
   }
 }
-},{"./join":"../node_modules/topojson/node_modules/topojson-server/src/join.js"}],"../node_modules/topojson/node_modules/topojson-server/src/dedup.js":[function(require,module,exports) {
+},{"./join":"../node_modules/topojson-server/src/join.js"}],"../node_modules/topojson-server/src/dedup.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33190,7 +33190,7 @@ function _default(topology) {
 
   return topology;
 }
-},{"./hash/hashmap":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js","./hash/point-equal":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-equal.js","./hash/point-hash":"../node_modules/topojson/node_modules/topojson-server/src/hash/point-hash.js"}],"../node_modules/topojson/node_modules/topojson-server/src/delta.js":[function(require,module,exports) {
+},{"./hash/hashmap":"../node_modules/topojson-server/src/hash/hashmap.js","./hash/point-equal":"../node_modules/topojson-server/src/hash/point-equal.js","./hash/point-hash":"../node_modules/topojson-server/src/hash/point-hash.js"}],"../node_modules/topojson-server/src/delta.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33228,7 +33228,7 @@ function _default(arcs) {
 
   return arcs;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/extract.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/extract.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33319,7 +33319,7 @@ function _default(objects) {
     objects: objects
   };
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/geometry.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/geometry.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33388,7 +33388,7 @@ function geomifyGeometry(input) {
   if (input.bbox != null) output.bbox = input.bbox;
   return output;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/prequantize.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/prequantize.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33483,7 +33483,7 @@ function _default(objects, bbox, n) {
     translate: [x0, y0]
   };
 }
-},{}],"../node_modules/topojson/node_modules/topojson-server/src/topology.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-server/src/topology.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33595,7 +33595,7 @@ function equalArc(arcA, arcB) {
   if (jb < ib) t = ib, ib = jb, jb = t;
   return ia === ib && ja === jb;
 }
-},{"./bounds":"../node_modules/topojson/node_modules/topojson-server/src/bounds.js","./cut":"../node_modules/topojson/node_modules/topojson-server/src/cut.js","./dedup":"../node_modules/topojson/node_modules/topojson-server/src/dedup.js","./delta":"../node_modules/topojson/node_modules/topojson-server/src/delta.js","./extract":"../node_modules/topojson/node_modules/topojson-server/src/extract.js","./geometry":"../node_modules/topojson/node_modules/topojson-server/src/geometry.js","./hash/hashmap":"../node_modules/topojson/node_modules/topojson-server/src/hash/hashmap.js","./prequantize":"../node_modules/topojson/node_modules/topojson-server/src/prequantize.js"}],"../node_modules/topojson/node_modules/topojson-server/index.js":[function(require,module,exports) {
+},{"./bounds":"../node_modules/topojson-server/src/bounds.js","./cut":"../node_modules/topojson-server/src/cut.js","./dedup":"../node_modules/topojson-server/src/dedup.js","./delta":"../node_modules/topojson-server/src/delta.js","./extract":"../node_modules/topojson-server/src/extract.js","./geometry":"../node_modules/topojson-server/src/geometry.js","./hash/hashmap":"../node_modules/topojson-server/src/hash/hashmap.js","./prequantize":"../node_modules/topojson-server/src/prequantize.js"}],"../node_modules/topojson-server/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33611,7 +33611,7 @@ Object.defineProperty(exports, "topology", {
 var _topology = _interopRequireDefault(require("./src/topology"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./src/topology":"../node_modules/topojson/node_modules/topojson-server/src/topology.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/prune.js":[function(require,module,exports) {
+},{"./src/topology":"../node_modules/topojson-server/src/topology.js"}],"../node_modules/topojson-simplify/src/prune.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33754,7 +33754,7 @@ function _default(topology) {
     arcs: newArcs
   };
 }
-},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/filter.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-simplify/src/filter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33859,7 +33859,7 @@ function filterIdentity(x) {
 function filterNotNull(geometry) {
   return geometry.type != null;
 }
-},{"./prune":"../node_modules/topojson/node_modules/topojson-simplify/src/prune.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttached.js":[function(require,module,exports) {
+},{"./prune":"../node_modules/topojson-simplify/src/prune.js"}],"../node_modules/topojson-simplify/src/filterAttached.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33914,7 +33914,879 @@ function _default(topology) {
     return false;
   };
 }
-},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/identity.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(x) {
+  return x;
+}
+},{}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/transform.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _identity = _interopRequireDefault(require("./identity.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default(transform) {
+  if (transform == null) return _identity.default;
+  var x0,
+      y0,
+      kx = transform.scale[0],
+      ky = transform.scale[1],
+      dx = transform.translate[0],
+      dy = transform.translate[1];
+  return function (input, i) {
+    if (!i) x0 = y0 = 0;
+    var j = 2,
+        n = input.length,
+        output = new Array(n);
+    output[0] = (x0 += input[0]) * kx + dx;
+    output[1] = (y0 += input[1]) * ky + dy;
+
+    while (j < n) output[j] = input[j], ++j;
+
+    return output;
+  };
+}
+},{"./identity.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/bbox.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _transform = _interopRequireDefault(require("./transform.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default(topology) {
+  var t = (0, _transform.default)(topology.transform),
+      key,
+      x0 = Infinity,
+      y0 = x0,
+      x1 = -x0,
+      y1 = -x0;
+
+  function bboxPoint(p) {
+    p = t(p);
+    if (p[0] < x0) x0 = p[0];
+    if (p[0] > x1) x1 = p[0];
+    if (p[1] < y0) y0 = p[1];
+    if (p[1] > y1) y1 = p[1];
+  }
+
+  function bboxGeometry(o) {
+    switch (o.type) {
+      case "GeometryCollection":
+        o.geometries.forEach(bboxGeometry);
+        break;
+
+      case "Point":
+        bboxPoint(o.coordinates);
+        break;
+
+      case "MultiPoint":
+        o.coordinates.forEach(bboxPoint);
+        break;
+    }
+  }
+
+  topology.arcs.forEach(function (arc) {
+    var i = -1,
+        n = arc.length,
+        p;
+
+    while (++i < n) {
+      p = t(arc[i], i);
+      if (p[0] < x0) x0 = p[0];
+      if (p[0] > x1) x1 = p[0];
+      if (p[1] < y0) y0 = p[1];
+      if (p[1] > y1) y1 = p[1];
+    }
+  });
+
+  for (key in topology.objects) {
+    bboxGeometry(topology.objects[key]);
+  }
+
+  return [x0, y0, x1, y1];
+}
+},{"./transform.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/reverse.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(array, n) {
+  var t,
+      j = array.length,
+      i = j - n;
+
+  while (i < --j) t = array[i], array[i++] = array[j], array[j] = t;
+}
+},{}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/feature.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+exports.object = object;
+
+var _reverse = _interopRequireDefault(require("./reverse.js"));
+
+var _transform = _interopRequireDefault(require("./transform.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default(topology, o) {
+  if (typeof o === "string") o = topology.objects[o];
+  return o.type === "GeometryCollection" ? {
+    type: "FeatureCollection",
+    features: o.geometries.map(function (o) {
+      return feature(topology, o);
+    })
+  } : feature(topology, o);
+}
+
+function feature(topology, o) {
+  var id = o.id,
+      bbox = o.bbox,
+      properties = o.properties == null ? {} : o.properties,
+      geometry = object(topology, o);
+  return id == null && bbox == null ? {
+    type: "Feature",
+    properties: properties,
+    geometry: geometry
+  } : bbox == null ? {
+    type: "Feature",
+    id: id,
+    properties: properties,
+    geometry: geometry
+  } : {
+    type: "Feature",
+    id: id,
+    bbox: bbox,
+    properties: properties,
+    geometry: geometry
+  };
+}
+
+function object(topology, o) {
+  var transformPoint = (0, _transform.default)(topology.transform),
+      arcs = topology.arcs;
+
+  function arc(i, points) {
+    if (points.length) points.pop();
+
+    for (var a = arcs[i < 0 ? ~i : i], k = 0, n = a.length; k < n; ++k) {
+      points.push(transformPoint(a[k], k));
+    }
+
+    if (i < 0) (0, _reverse.default)(points, n);
+  }
+
+  function point(p) {
+    return transformPoint(p);
+  }
+
+  function line(arcs) {
+    var points = [];
+
+    for (var i = 0, n = arcs.length; i < n; ++i) arc(arcs[i], points);
+
+    if (points.length < 2) points.push(points[0]); // This should never happen per the specification.
+
+    return points;
+  }
+
+  function ring(arcs) {
+    var points = line(arcs);
+
+    while (points.length < 4) points.push(points[0]); // This may happen if an arc has only two points.
+
+
+    return points;
+  }
+
+  function polygon(arcs) {
+    return arcs.map(ring);
+  }
+
+  function geometry(o) {
+    var type = o.type,
+        coordinates;
+
+    switch (type) {
+      case "GeometryCollection":
+        return {
+          type: type,
+          geometries: o.geometries.map(geometry)
+        };
+
+      case "Point":
+        coordinates = point(o.coordinates);
+        break;
+
+      case "MultiPoint":
+        coordinates = o.coordinates.map(point);
+        break;
+
+      case "LineString":
+        coordinates = line(o.arcs);
+        break;
+
+      case "MultiLineString":
+        coordinates = o.arcs.map(line);
+        break;
+
+      case "Polygon":
+        coordinates = polygon(o.arcs);
+        break;
+
+      case "MultiPolygon":
+        coordinates = o.arcs.map(polygon);
+        break;
+
+      default:
+        return null;
+    }
+
+    return {
+      type: type,
+      coordinates: coordinates
+    };
+  }
+
+  return geometry(o);
+}
+},{"./reverse.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/reverse.js","./transform.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/transform.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/stitch.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(topology, arcs) {
+  var stitchedArcs = {},
+      fragmentByStart = {},
+      fragmentByEnd = {},
+      fragments = [],
+      emptyIndex = -1; // Stitch empty arcs first, since they may be subsumed by other arcs.
+
+  arcs.forEach(function (i, j) {
+    var arc = topology.arcs[i < 0 ? ~i : i],
+        t;
+
+    if (arc.length < 3 && !arc[1][0] && !arc[1][1]) {
+      t = arcs[++emptyIndex], arcs[emptyIndex] = i, arcs[j] = t;
+    }
+  });
+  arcs.forEach(function (i) {
+    var e = ends(i),
+        start = e[0],
+        end = e[1],
+        f,
+        g;
+
+    if (f = fragmentByEnd[start]) {
+      delete fragmentByEnd[f.end];
+      f.push(i);
+      f.end = end;
+
+      if (g = fragmentByStart[end]) {
+        delete fragmentByStart[g.start];
+        var fg = g === f ? f : f.concat(g);
+        fragmentByStart[fg.start = f.start] = fragmentByEnd[fg.end = g.end] = fg;
+      } else {
+        fragmentByStart[f.start] = fragmentByEnd[f.end] = f;
+      }
+    } else if (f = fragmentByStart[end]) {
+      delete fragmentByStart[f.start];
+      f.unshift(i);
+      f.start = start;
+
+      if (g = fragmentByEnd[start]) {
+        delete fragmentByEnd[g.end];
+        var gf = g === f ? f : g.concat(f);
+        fragmentByStart[gf.start = g.start] = fragmentByEnd[gf.end = f.end] = gf;
+      } else {
+        fragmentByStart[f.start] = fragmentByEnd[f.end] = f;
+      }
+    } else {
+      f = [i];
+      fragmentByStart[f.start = start] = fragmentByEnd[f.end = end] = f;
+    }
+  });
+
+  function ends(i) {
+    var arc = topology.arcs[i < 0 ? ~i : i],
+        p0 = arc[0],
+        p1;
+    if (topology.transform) p1 = [0, 0], arc.forEach(function (dp) {
+      p1[0] += dp[0], p1[1] += dp[1];
+    });else p1 = arc[arc.length - 1];
+    return i < 0 ? [p1, p0] : [p0, p1];
+  }
+
+  function flush(fragmentByEnd, fragmentByStart) {
+    for (var k in fragmentByEnd) {
+      var f = fragmentByEnd[k];
+      delete fragmentByStart[f.start];
+      delete f.start;
+      delete f.end;
+      f.forEach(function (i) {
+        stitchedArcs[i < 0 ? ~i : i] = 1;
+      });
+      fragments.push(f);
+    }
+  }
+
+  flush(fragmentByEnd, fragmentByStart);
+  flush(fragmentByStart, fragmentByEnd);
+  arcs.forEach(function (i) {
+    if (!stitchedArcs[i < 0 ? ~i : i]) fragments.push([i]);
+  });
+  return fragments;
+}
+},{}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/mesh.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+exports.meshArcs = meshArcs;
+
+var _feature = require("./feature.js");
+
+var _stitch = _interopRequireDefault(require("./stitch.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default(topology) {
+  return (0, _feature.object)(topology, meshArcs.apply(this, arguments));
+}
+
+function meshArcs(topology, object, filter) {
+  var arcs, i, n;
+  if (arguments.length > 1) arcs = extractArcs(topology, object, filter);else for (i = 0, arcs = new Array(n = topology.arcs.length); i < n; ++i) arcs[i] = i;
+  return {
+    type: "MultiLineString",
+    arcs: (0, _stitch.default)(topology, arcs)
+  };
+}
+
+function extractArcs(topology, object, filter) {
+  var arcs = [],
+      geomsByArc = [],
+      geom;
+
+  function extract0(i) {
+    var j = i < 0 ? ~i : i;
+    (geomsByArc[j] || (geomsByArc[j] = [])).push({
+      i: i,
+      g: geom
+    });
+  }
+
+  function extract1(arcs) {
+    arcs.forEach(extract0);
+  }
+
+  function extract2(arcs) {
+    arcs.forEach(extract1);
+  }
+
+  function extract3(arcs) {
+    arcs.forEach(extract2);
+  }
+
+  function geometry(o) {
+    switch (geom = o, o.type) {
+      case "GeometryCollection":
+        o.geometries.forEach(geometry);
+        break;
+
+      case "LineString":
+        extract1(o.arcs);
+        break;
+
+      case "MultiLineString":
+      case "Polygon":
+        extract2(o.arcs);
+        break;
+
+      case "MultiPolygon":
+        extract3(o.arcs);
+        break;
+    }
+  }
+
+  geometry(object);
+  geomsByArc.forEach(filter == null ? function (geoms) {
+    arcs.push(geoms[0].i);
+  } : function (geoms) {
+    if (filter(geoms[0].g, geoms[geoms.length - 1].g)) arcs.push(geoms[0].i);
+  });
+  return arcs;
+}
+},{"./feature.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/feature.js","./stitch.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/merge.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+exports.mergeArcs = mergeArcs;
+
+var _feature = require("./feature.js");
+
+var _stitch = _interopRequireDefault(require("./stitch.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function planarRingArea(ring) {
+  var i = -1,
+      n = ring.length,
+      a,
+      b = ring[n - 1],
+      area = 0;
+
+  while (++i < n) a = b, b = ring[i], area += a[0] * b[1] - a[1] * b[0];
+
+  return Math.abs(area); // Note: doubled area!
+}
+
+function _default(topology) {
+  return (0, _feature.object)(topology, mergeArcs.apply(this, arguments));
+}
+
+function mergeArcs(topology, objects) {
+  var polygonsByArc = {},
+      polygons = [],
+      groups = [];
+  objects.forEach(geometry);
+
+  function geometry(o) {
+    switch (o.type) {
+      case "GeometryCollection":
+        o.geometries.forEach(geometry);
+        break;
+
+      case "Polygon":
+        extract(o.arcs);
+        break;
+
+      case "MultiPolygon":
+        o.arcs.forEach(extract);
+        break;
+    }
+  }
+
+  function extract(polygon) {
+    polygon.forEach(function (ring) {
+      ring.forEach(function (arc) {
+        (polygonsByArc[arc = arc < 0 ? ~arc : arc] || (polygonsByArc[arc] = [])).push(polygon);
+      });
+    });
+    polygons.push(polygon);
+  }
+
+  function area(ring) {
+    return planarRingArea((0, _feature.object)(topology, {
+      type: "Polygon",
+      arcs: [ring]
+    }).coordinates[0]);
+  }
+
+  polygons.forEach(function (polygon) {
+    if (!polygon._) {
+      var group = [],
+          neighbors = [polygon];
+      polygon._ = 1;
+      groups.push(group);
+
+      while (polygon = neighbors.pop()) {
+        group.push(polygon);
+        polygon.forEach(function (ring) {
+          ring.forEach(function (arc) {
+            polygonsByArc[arc < 0 ? ~arc : arc].forEach(function (polygon) {
+              if (!polygon._) {
+                polygon._ = 1;
+                neighbors.push(polygon);
+              }
+            });
+          });
+        });
+      }
+    }
+  });
+  polygons.forEach(function (polygon) {
+    delete polygon._;
+  });
+  return {
+    type: "MultiPolygon",
+    arcs: groups.map(function (polygons) {
+      var arcs = [],
+          n; // Extract the exterior (unique) arcs.
+
+      polygons.forEach(function (polygon) {
+        polygon.forEach(function (ring) {
+          ring.forEach(function (arc) {
+            if (polygonsByArc[arc < 0 ? ~arc : arc].length < 2) {
+              arcs.push(arc);
+            }
+          });
+        });
+      }); // Stitch the arcs into one or more rings.
+
+      arcs = (0, _stitch.default)(topology, arcs); // If more than one ring is returned,
+      // at most one of these rings can be the exterior;
+      // choose the one with the greatest absolute area.
+
+      if ((n = arcs.length) > 1) {
+        for (var i = 1, k = area(arcs[0]), ki, t; i < n; ++i) {
+          if ((ki = area(arcs[i])) > k) {
+            t = arcs[0], arcs[0] = arcs[i], arcs[i] = t, k = ki;
+          }
+        }
+      }
+
+      return arcs;
+    }).filter(function (arcs) {
+      return arcs.length > 0;
+    })
+  };
+}
+},{"./feature.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/feature.js","./stitch.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/stitch.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/bisect.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+function _default(a, x) {
+  var lo = 0,
+      hi = a.length;
+
+  while (lo < hi) {
+    var mid = lo + hi >>> 1;
+    if (a[mid] < x) lo = mid + 1;else hi = mid;
+  }
+
+  return lo;
+}
+},{}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/neighbors.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _bisect = _interopRequireDefault(require("./bisect.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default(objects) {
+  var indexesByArc = {},
+      // arc index -> array of object indexes
+  neighbors = objects.map(function () {
+    return [];
+  });
+
+  function line(arcs, i) {
+    arcs.forEach(function (a) {
+      if (a < 0) a = ~a;
+      var o = indexesByArc[a];
+      if (o) o.push(i);else indexesByArc[a] = [i];
+    });
+  }
+
+  function polygon(arcs, i) {
+    arcs.forEach(function (arc) {
+      line(arc, i);
+    });
+  }
+
+  function geometry(o, i) {
+    if (o.type === "GeometryCollection") o.geometries.forEach(function (o) {
+      geometry(o, i);
+    });else if (o.type in geometryType) geometryType[o.type](o.arcs, i);
+  }
+
+  var geometryType = {
+    LineString: line,
+    MultiLineString: polygon,
+    Polygon: polygon,
+    MultiPolygon: function (arcs, i) {
+      arcs.forEach(function (arc) {
+        polygon(arc, i);
+      });
+    }
+  };
+  objects.forEach(geometry);
+
+  for (var i in indexesByArc) {
+    for (var indexes = indexesByArc[i], m = indexes.length, j = 0; j < m; ++j) {
+      for (var k = j + 1; k < m; ++k) {
+        var ij = indexes[j],
+            ik = indexes[k],
+            n;
+        if ((n = neighbors[ij])[i = (0, _bisect.default)(n, ik)] !== ik) n.splice(i, 0, ik);
+        if ((n = neighbors[ik])[i = (0, _bisect.default)(n, ij)] !== ij) n.splice(i, 0, ij);
+      }
+    }
+  }
+
+  return neighbors;
+}
+},{"./bisect.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/bisect.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/untransform.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _identity = _interopRequireDefault(require("./identity.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default(transform) {
+  if (transform == null) return _identity.default;
+  var x0,
+      y0,
+      kx = transform.scale[0],
+      ky = transform.scale[1],
+      dx = transform.translate[0],
+      dy = transform.translate[1];
+  return function (input, i) {
+    if (!i) x0 = y0 = 0;
+    var j = 2,
+        n = input.length,
+        output = new Array(n),
+        x1 = Math.round((input[0] - dx) / kx),
+        y1 = Math.round((input[1] - dy) / ky);
+    output[0] = x1 - x0, x0 = x1;
+    output[1] = y1 - y0, y0 = y1;
+
+    while (j < n) output[j] = input[j], ++j;
+
+    return output;
+  };
+}
+},{"./identity.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/identity.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/quantize.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _bbox = _interopRequireDefault(require("./bbox.js"));
+
+var _untransform = _interopRequireDefault(require("./untransform.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default(topology, transform) {
+  if (topology.transform) throw new Error("already quantized");
+
+  if (!transform || !transform.scale) {
+    if (!((n = Math.floor(transform)) >= 2)) throw new Error("n must be ≥2");
+    box = topology.bbox || (0, _bbox.default)(topology);
+    var x0 = box[0],
+        y0 = box[1],
+        x1 = box[2],
+        y1 = box[3],
+        n;
+    transform = {
+      scale: [x1 - x0 ? (x1 - x0) / (n - 1) : 1, y1 - y0 ? (y1 - y0) / (n - 1) : 1],
+      translate: [x0, y0]
+    };
+  } else {
+    box = topology.bbox;
+  }
+
+  var t = (0, _untransform.default)(transform),
+      box,
+      key,
+      inputs = topology.objects,
+      outputs = {};
+
+  function quantizePoint(point) {
+    return t(point);
+  }
+
+  function quantizeGeometry(input) {
+    var output;
+
+    switch (input.type) {
+      case "GeometryCollection":
+        output = {
+          type: "GeometryCollection",
+          geometries: input.geometries.map(quantizeGeometry)
+        };
+        break;
+
+      case "Point":
+        output = {
+          type: "Point",
+          coordinates: quantizePoint(input.coordinates)
+        };
+        break;
+
+      case "MultiPoint":
+        output = {
+          type: "MultiPoint",
+          coordinates: input.coordinates.map(quantizePoint)
+        };
+        break;
+
+      default:
+        return input;
+    }
+
+    if (input.id != null) output.id = input.id;
+    if (input.bbox != null) output.bbox = input.bbox;
+    if (input.properties != null) output.properties = input.properties;
+    return output;
+  }
+
+  function quantizeArc(input) {
+    var i = 0,
+        j = 1,
+        n = input.length,
+        p,
+        output = new Array(n); // pessimistic
+
+    output[0] = t(input[0], 0);
+
+    while (++i < n) if ((p = t(input[i], i))[0] || p[1]) output[j++] = p; // non-coincident points
+
+
+    if (j === 1) output[j++] = [0, 0]; // an arc must have at least two points
+
+    output.length = j;
+    return output;
+  }
+
+  for (key in inputs) outputs[key] = quantizeGeometry(inputs[key]);
+
+  return {
+    type: "Topology",
+    bbox: box,
+    transform: transform,
+    objects: outputs,
+    arcs: topology.arcs.map(quantizeArc)
+  };
+}
+},{"./bbox.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/bbox.js","./untransform.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson-simplify/node_modules/topojson-client/src/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "bbox", {
+  enumerable: true,
+  get: function () {
+    return _bbox.default;
+  }
+});
+Object.defineProperty(exports, "feature", {
+  enumerable: true,
+  get: function () {
+    return _feature.default;
+  }
+});
+Object.defineProperty(exports, "mesh", {
+  enumerable: true,
+  get: function () {
+    return _mesh.default;
+  }
+});
+Object.defineProperty(exports, "meshArcs", {
+  enumerable: true,
+  get: function () {
+    return _mesh.meshArcs;
+  }
+});
+Object.defineProperty(exports, "merge", {
+  enumerable: true,
+  get: function () {
+    return _merge.default;
+  }
+});
+Object.defineProperty(exports, "mergeArcs", {
+  enumerable: true,
+  get: function () {
+    return _merge.mergeArcs;
+  }
+});
+Object.defineProperty(exports, "neighbors", {
+  enumerable: true,
+  get: function () {
+    return _neighbors.default;
+  }
+});
+Object.defineProperty(exports, "quantize", {
+  enumerable: true,
+  get: function () {
+    return _quantize.default;
+  }
+});
+Object.defineProperty(exports, "transform", {
+  enumerable: true,
+  get: function () {
+    return _transform.default;
+  }
+});
+Object.defineProperty(exports, "untransform", {
+  enumerable: true,
+  get: function () {
+    return _untransform.default;
+  }
+});
+
+var _bbox = _interopRequireDefault(require("./bbox.js"));
+
+var _feature = _interopRequireDefault(require("./feature.js"));
+
+var _mesh = _interopRequireWildcard(require("./mesh.js"));
+
+var _merge = _interopRequireWildcard(require("./merge.js"));
+
+var _neighbors = _interopRequireDefault(require("./neighbors.js"));
+
+var _quantize = _interopRequireDefault(require("./quantize.js"));
+
+var _transform = _interopRequireDefault(require("./transform.js"));
+
+var _untransform = _interopRequireDefault(require("./untransform.js"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./bbox.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/bbox.js","./feature.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/feature.js","./mesh.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/mesh.js","./merge.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/merge.js","./neighbors.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/neighbors.js","./quantize.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/quantize.js","./transform.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/transform.js","./untransform.js":"../node_modules/topojson-simplify/node_modules/topojson-client/src/untransform.js"}],"../node_modules/topojson-simplify/src/planar.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33941,7 +34813,7 @@ function planarRingArea(ring) {
 
   return Math.abs(area) / 2;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/filterWeight.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-simplify/src/filterWeight.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33963,7 +34835,7 @@ function _default(topology, minWeight, weight) {
     }).geometry.coordinates[0], interior) >= minWeight;
   };
 }
-},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","./planar":"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttachedWeight.js":[function(require,module,exports) {
+},{"topojson-client":"../node_modules/topojson-simplify/node_modules/topojson-client/src/index.js","./planar":"../node_modules/topojson-simplify/src/planar.js"}],"../node_modules/topojson-simplify/src/filterAttachedWeight.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33984,7 +34856,7 @@ function _default(topology, minWeight, weight) {
     return a(ring, interior) || w(ring, interior);
   };
 }
-},{"./filterAttached":"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttached.js","./filterWeight":"../node_modules/topojson/node_modules/topojson-simplify/src/filterWeight.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/heap.js":[function(require,module,exports) {
+},{"./filterAttached":"../node_modules/topojson-simplify/src/filterAttached.js","./filterWeight":"../node_modules/topojson-simplify/src/filterWeight.js"}],"../node_modules/topojson-simplify/src/heap.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34049,7 +34921,7 @@ function _default() {
 
   return heap;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/presimplify.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-simplify/src/presimplify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34135,7 +35007,7 @@ function _default(topology, weight) {
     arcs: arcs
   };
 }
-},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","./heap":"../node_modules/topojson/node_modules/topojson-simplify/src/heap.js","./planar":"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js"}],"../node_modules/topojson/node_modules/topojson-simplify/src/quantile.js":[function(require,module,exports) {
+},{"topojson-client":"../node_modules/topojson-simplify/node_modules/topojson-client/src/index.js","./heap":"../node_modules/topojson-simplify/src/heap.js","./planar":"../node_modules/topojson-simplify/src/planar.js"}],"../node_modules/topojson-simplify/src/quantile.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34171,7 +35043,7 @@ function quantile(array, p) {
 function descending(a, b) {
   return b - a;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/simplify.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-simplify/src/simplify.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34207,7 +35079,7 @@ function _default(topology, minWeight) {
     arcs: arcs
   };
 }
-},{}],"../node_modules/topojson/node_modules/topojson-simplify/src/spherical.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-simplify/src/spherical.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34268,7 +35140,7 @@ function sphericalRingArea(ring, interior) {
 function sphericalTriangleArea(t) {
   return abs(halfArea(t, false)) * 2;
 }
-},{}],"../node_modules/topojson/node_modules/topojson-simplify/index.js":[function(require,module,exports) {
+},{}],"../node_modules/topojson-simplify/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34360,7 +35232,7 @@ var _simplify = _interopRequireDefault(require("./src/simplify"));
 var _spherical = require("./src/spherical");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./src/filter":"../node_modules/topojson/node_modules/topojson-simplify/src/filter.js","./src/filterAttached":"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttached.js","./src/filterAttachedWeight":"../node_modules/topojson/node_modules/topojson-simplify/src/filterAttachedWeight.js","./src/filterWeight":"../node_modules/topojson/node_modules/topojson-simplify/src/filterWeight.js","./src/planar":"../node_modules/topojson/node_modules/topojson-simplify/src/planar.js","./src/presimplify":"../node_modules/topojson/node_modules/topojson-simplify/src/presimplify.js","./src/quantile":"../node_modules/topojson/node_modules/topojson-simplify/src/quantile.js","./src/simplify":"../node_modules/topojson/node_modules/topojson-simplify/src/simplify.js","./src/spherical":"../node_modules/topojson/node_modules/topojson-simplify/src/spherical.js"}],"../node_modules/topojson/index.js":[function(require,module,exports) {
+},{"./src/filter":"../node_modules/topojson-simplify/src/filter.js","./src/filterAttached":"../node_modules/topojson-simplify/src/filterAttached.js","./src/filterAttachedWeight":"../node_modules/topojson-simplify/src/filterAttachedWeight.js","./src/filterWeight":"../node_modules/topojson-simplify/src/filterWeight.js","./src/planar":"../node_modules/topojson-simplify/src/planar.js","./src/presimplify":"../node_modules/topojson-simplify/src/presimplify.js","./src/quantile":"../node_modules/topojson-simplify/src/quantile.js","./src/simplify":"../node_modules/topojson-simplify/src/simplify.js","./src/spherical":"../node_modules/topojson-simplify/src/spherical.js"}],"../node_modules/topojson/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34405,7 +35277,7 @@ Object.keys(_topojsonSimplify).forEach(function (key) {
     }
   });
 });
-},{"topojson-client":"../node_modules/topojson/node_modules/topojson-client/index.js","topojson-server":"../node_modules/topojson/node_modules/topojson-server/index.js","topojson-simplify":"../node_modules/topojson/node_modules/topojson-simplify/index.js"}],"scripts/modules/nltopo.js":[function(require,module,exports) {
+},{"topojson-client":"../node_modules/topojson-client/index.js","topojson-server":"../node_modules/topojson-server/index.js","topojson-simplify":"../node_modules/topojson-simplify/index.js"}],"scripts/modules/nltopo.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34499,7 +35371,7 @@ var tooltip = (0, _d.select)('body').append('div').style('position', 'absolute')
 exports.tooltip = tooltip;
 
 var handleMouseOver = function handleMouseOver(d, i) {
-  tooltip.append('p').text(i.areadesc), tooltip.style('visibility', 'visible');
+  tooltip.append('p').text(i.areadesc + ' ' + i.paymentmethod), tooltip.style('visibility', 'visible');
 };
 
 exports.handleMouseOver = handleMouseOver;
@@ -34541,7 +35413,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var showDetail = function showDetail(d, i) {
   (0, _d2.selectAll)('.description').remove();
   var toArray = Object.entries(i);
-  console.log(toArray);
   toArray.pop();
   toArray.forEach(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
@@ -34575,10 +35446,114 @@ var dots = function dots(data) {
   }).attr('cy', function (d) {
     return projection([d.location.longitude, d.location.latitude])[1];
   }).attr('r', '4px').attr('fill', '#e94560').on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut).on('click', _showDetail.showDetail);
+
+  function reassignDots(data) {
+    var dots = g.selectAll('circle').data(data);
+    dots.attr('cx', function (d) {
+      return projection([d.location.longitude, d.location.latitude])[0];
+    }).attr('cy', function (d) {
+      return projection([d.location.longitude, d.location.latitude])[1];
+    });
+    dots.enter().append('circle').attr('r', 4).attr('fill', '#e94560').attr('cx', function (d) {
+      return projection([d.location.longitude, d.location.latitude])[0];
+    }).attr('cy', function (d) {
+      return projection([d.location.longitude, d.location.latitude])[1];
+    }).on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut);
+    dots.exit().remove();
+  }
+
+  var arraywithvalues = [];
+  data.forEach(function (element) {
+    arraywithvalues.push(element.pricePerHour.slice(0, 4));
+  });
+
+  var unique = function unique(value, index, self) {
+    return self.indexOf(value) === index;
+  };
+
+  var filteredUniqueValues = arraywithvalues.filter(unique);
+  filteredUniqueValues.sort(_d.ascending); // Make a div inside form for each year
+
+  var form = (0, _d.select)('form').selectAll('div').data(filteredUniqueValues).enter().append('div').attr('class', 'radioBtn'); // inside the div make a input with the name of the year array
+
+  form.append('input').attr('type', 'radio').attr('name', 'Radio').attr('id', function (d, i) {
+    return filteredUniqueValues[i];
+  }).on('change', function (d, i) {
+    changeYear(i);
+  }); // inside the div make a label with the text of the year array
+
+  form.append('label').attr('for', function (d, i) {
+    return filteredUniqueValues[i];
+  }).text(function (d, i) {
+    return "\u20AC ".concat(filteredUniqueValues[i]);
+  }); // Filter the data and make a new array with the filtered data
+
+  function changeYear(i) {
+    var filteredYear = data.filter(function (row) {
+      return row.pricePerHour.slice(0, 4) == i;
+    });
+    console.log(filteredYear);
+    reassignDots(filteredYear);
+  }
+
+  var resetBtn = (0, _d.select)(".reset-button");
+  resetBtn.on("click", function () {
+    reassignDots(data);
+    uncheckAllRadio();
+  });
+
+  function uncheckAllRadio() {
+    var radioBtns = (0, _d.selectAll)("input[type=radio]");
+    radioBtns.property("checked", false);
+  }
 };
 
 exports.dots = dots;
-},{"d3":"../node_modules/d3/index.js","./tooltip-mouse":"scripts/modules/tooltip-mouse.js","./show-detail":"scripts/modules/show-detail.js"}],"scripts/modules/filter.js":[function(require,module,exports) {
+},{"d3":"../node_modules/d3/index.js","./tooltip-mouse":"scripts/modules/tooltip-mouse.js","./show-detail":"scripts/modules/show-detail.js"}],"scripts/modules/bar-chart.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.render = void 0;
+
+var _d = require("d3");
+
+var render = function render(index1, index2) {
+  var arr = [];
+  arr.push(index1);
+  arr.push(index2);
+  (0, _d.selectAll)('.graph').remove(); // set the dimensions and margins of the graph
+
+  var margin = {
+    top: 20,
+    right: 5,
+    bottom: 40,
+    left: 250
+  },
+      width = 800 - margin.left - margin.right,
+      height = 200 - margin.top - margin.bottom; // append the svg object to the body of the page
+
+  var svg = (0, _d.select)('.multi-select').append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom).attr('class', 'graph').append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')'); // Add X axis
+
+  var x = (0, _d.scaleLinear)().domain([0, 6]).range([0, width]);
+  svg.append('g').attr('transform', 'translate(0,' + height + ')').call((0, _d.axisBottom)(x)).selectAll('text').attr('transform', 'translate(-10,0)rotate(-45)').style('text-anchor', 'end');
+  svg.append('text').attr('transform', 'translate(' + width / 2 + ' ,' + (height + margin.top + 40) + ')').attr('fill', '#FFFF').style('text-anchor', 'middle').text('prijs per uur'); // Y axis
+
+  var y = (0, _d.scaleBand)().range([0, height]).domain(arr.map(function (d) {
+    return d.areadesc;
+  })).padding(.1);
+  svg.append('g').call((0, _d.axisLeft)(y)); //Bars
+
+  svg.selectAll('myRect').data(arr).enter().append('rect').attr('x', x(0)).attr('y', function (d) {
+    return y(d.areadesc);
+  }).attr('width', function (d) {
+    return x(d.pricePerHour);
+  }).attr('height', y.bandwidth()).attr('fill', '#69b3a2');
+};
+
+exports.render = render;
+},{"d3":"../node_modules/d3/index.js"}],"scripts/modules/filter.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34590,21 +35565,43 @@ var _d = require("d3");
 
 var _showDetail = require("./show-detail");
 
+var _barChart = require("./bar-chart");
+
+var _this = void 0;
+
 var filter = function filter(data) {
   (0, _d.select)('.filter select').selectAll('myoptions').data(data).enter().append('option').attr('value', function (d, i) {
     return i;
   }).text(function (d) {
     return d.areadesc;
+  }); // multiselect
+
+  (0, _d.selectAll)('.multi-select .drop1 select').selectAll('myoptions').data(data).enter().append('option').attr('value', function (d, i) {
+    return i;
+  }).text(function (d) {
+    return d.areadesc;
+  });
+  (0, _d.selectAll)('.dropdown1').data(data).on('change', function () {
+    var index1 = data[(0, _d.select)('.dropdown1').property('value')];
+    var index2 = data[(0, _d.select)('.dropdown2').property('value')];
+
+    if (!index2) {
+      index2 = data[9];
+    }
+
+    console.log(index1, index2); // index ? showDetail(d,index) : console.log('Not a valid index')
+
+    (0, _barChart.render)(index1, index2, data);
   });
   (0, _d.select)('.select').data(data).on('change', function (d, i) {
-    var index = data[(0, _d.select)(this).property('value')];
+    var index = data[(0, _d.select)(_this).property('value')];
     console.log(index);
     index ? (0, _showDetail.showDetail)(d, index) : console.log('Not a valid index');
   });
 };
 
 exports.filter = filter;
-},{"d3":"../node_modules/d3/index.js","./show-detail":"scripts/modules/show-detail.js"}],"scripts/index.js":[function(require,module,exports) {
+},{"d3":"../node_modules/d3/index.js","./show-detail":"scripts/modules/show-detail.js","./bar-chart":"scripts/modules/bar-chart.js"}],"scripts/index.js":[function(require,module,exports) {
 "use strict";
 
 require("regenerator-runtime/runtime");
@@ -34619,7 +35616,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/43295f6871191c44dd84351a5cff507d/raw/363b36215b024cfe482cdafbde371553444954d5/betaalmethode.json';
+var endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/44405f1b3a4de6099b901ba474c380b4/raw/b55532b92a5b6507bbc14f41dc876fc58a0cdf75/betaalmethode.json';
 
 function fetchData(_x) {
   return _fetchData.apply(this, arguments);
@@ -34689,7 +35686,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52502" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62189" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
