@@ -12,10 +12,9 @@ import { filter } from './modules/filter'
 
 
 
-
   
 
-  const endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/43295f6871191c44dd84351a5cff507d/raw/363b36215b024cfe482cdafbde371553444954d5/betaalmethode.json';
+  const endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/44405f1b3a4de6099b901ba474c380b4/raw/b55532b92a5b6507bbc14f41dc876fc58a0cdf75/betaalmethode.json';
   
 
 async function fetchData(url) {
