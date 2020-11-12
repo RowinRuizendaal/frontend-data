@@ -1,6 +1,12 @@
 # Functional-programming
 
 
+## Live demo
+
+[demo](https://rowinruizendaal.github.io/frontend-data/)
+
+**Please make sure if you dont see any dots appearing on the map, try to refresh the page I am currently trying to bugfix this issue**
+
 ## Volkskrant assignment
 
 For the Volkskrant, we are having a look into the RDW datasets that are provided to find interesting insights for a potential article about parking, where it is all about cars.
@@ -94,6 +100,7 @@ Authtor: [RowinRuizendaal](https://github.com/rowinruizendaal), license: [MIT](h
 ### Vizhub tries
 
 [Vizhub](https://vizhub.com/RowinRuizendaal)
+
 
 
 ### Resources
