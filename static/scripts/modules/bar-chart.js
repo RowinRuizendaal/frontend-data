@@ -5,20 +5,22 @@ import {
     scaleBand,
     axisLeft,
     axisBottom,
-    max
+    max,
+    selectorAll,
 
 } from 'd3';
 
 
-export const render = (index1, index2) => {
 
+export function makeNewData(index1, index2) {
     const arr = []
     arr.push(index1)
     arr.push(index2)
 
+    redraw(arr)
+}
 
-    selectAll('.graph').remove()
-    // set the dimensions and margins of the graph
+function redraw(receiveddata) {
     const margin = {
             top: 20,
             right: 5,
@@ -37,7 +39,6 @@ export const render = (index1, index2) => {
         .append('g')
         .attr('transform',
             'translate(' + margin.left + ',' + margin.top + ')');
-
 
     // Add X axis
     const x = scaleLinear()
@@ -62,7 +63,7 @@ export const render = (index1, index2) => {
     // Y axis
     const y = scaleBand()
         .range([0, height])
-        .domain(arr.map(function (d) {
+        .domain(receiveddata.map(function (d) {
             return d.areadesc
         }))
         .padding(.1);
@@ -70,17 +71,20 @@ export const render = (index1, index2) => {
         .call(axisLeft(y))
 
     //Bars
-    svg.selectAll('myRect')
-        .data(arr)
-        .enter()
-        .append('rect')
-        .attr('x', x(0))
-        .attr('y', function (d) {
-            return y(d.areadesc);
-        })
-        .attr('width', function (d) {
-            return x(d.pricePerHour);
-        })
-        .attr('height', y.bandwidth())
-        .attr('fill', '#69b3a2')
+        svg.selectAll('myRect')
+            .data(receiveddata)
+            .enter()
+            .append('rect')
+            .attr('x', x(0))
+            .attr('y', function (d) {
+                return y(d.areadesc);
+            })
+            .attr('width', function (d) {
+                return x(d.pricePerHour);
+            })
+            .attr('height', y.bandwidth())
+            .attr('fill', '#69b3a2')
+
+         selectAll('myRect').exit().remove()  
+
 }

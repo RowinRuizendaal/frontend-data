@@ -10,7 +10,7 @@ export const tooltip = select('body')
 export const handleMouseOver = (d,i) => {
     tooltip
     .append('p')
-     .text(i.areadesc + ' ' +  i.paymentmethod) , tooltip.style('visibility', 'visible')
+     .text(`${i.areadesc} € ${i.pricePerHour} p/u`) , tooltip.style('visibility', 'visible')
 }
 
 export const mouseMove = (event,d,i) => {

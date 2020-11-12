@@ -13,7 +13,7 @@ import {
 from 'd3'
 // import { select, selectAll} from 'd3'
 import { showDetail } from './show-detail'
-import { render } from './bar-chart'
+import { makeGraph, update, makeNewData } from './bar-chart'
 
 export const filter = (data) => {
 
@@ -46,10 +46,9 @@ selectAll('.dropdown1')
         index2 = data[9]
     }
 
-    console.log(index1, index2)
-
     // index ? showDetail(d,index) : console.log('Not a valid index')
-    render(index1, index2, data)
+    makeNewData(index1, index2, data)
+    
 })
 
 select('.select')

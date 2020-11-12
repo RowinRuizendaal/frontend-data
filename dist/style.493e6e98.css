@@ -171,7 +171,7 @@ label {
   text-align: center;
   cursor: pointer;
   background: #16013E;
-  border-radius: 0.6rem 0.6rem 0rem 0rem;
+  border-radius: 10px;
   color: #fff;
   font-family: 'Roboto', sans-serif;
 }
@@ -180,7 +180,7 @@ label:hover {
   background: var(--roze);
 }
 
-.reset-button {
+.reset {
   background: #16013E;
   border: 3px solid #16013E;
   padding: 0.6rem 3rem;
@@ -188,6 +188,11 @@ label:hover {
   font-size: 0.9rem;
   cursor: pointer;
   transition: 0.2s;
+}
+
+.reset:hover {
+  background: var(--roze);
+  border: 3px solid var(--roze);
 }
 
 input:checked + label {

@@ -39,6 +39,7 @@ export const dots = (data) => {
                 .on('mouseover', handleMouseOver)
                 .on('mousemove', mouseMove)
                 .on('mouseout', handleMouseOut)
+                .on('click', showDetail)
       
             dots.exit()
                   .remove()
@@ -47,59 +48,60 @@ export const dots = (data) => {
 
         const arraywithvalues = []
 
-        data.forEach(element => {
-            arraywithvalues.push(element.pricePerHour.slice(0, 4));
+        data.forEach(el => {
+            arraywithvalues.push(el.paymentmethod.slice(0, 4));
         });
         
         const unique = (value, index, self) => {
             return self.indexOf(value) === index
         }
         
-        const filteredUniqueValues = arraywithvalues.filter(unique)
-        filteredUniqueValues.sort(ascending)
+        const filterUnique = arraywithvalues.filter(unique)
+        filterUnique.sort(ascending) // built in with D3
         
         
-         // Make a div inside form for each year
+         // Make a div inside form element for all payment methods
          const form = select('form')
          .selectAll('div')
-         .data(filteredUniqueValues)
+         .data(filterUnique)
          .enter()
          .append('div')
          .attr('class', 'radioBtn')
         
-          // inside the div make a input with the name of the year array
+          // Make radiobuttons inside the input form
           form.append('input')
             .attr('type', 'radio')
             .attr('name', 'Radio')
-            .attr('id', (d,i) => filteredUniqueValues[i])
+            .attr('id', (d,i) => filterUnique[i])
             .on('change', (d, i) => {
-              changeYear(i);
+              updatemap(i); // Call function to reassing dots
             })
         
               // inside the div make a label with the text of the year array
           form.append('label')
-          .attr('for', (d,i) => filteredUniqueValues[i])
-          .text((d,i) => `€ ${filteredUniqueValues[i]}`)
+          .attr('for', (d,i) => filterUnique[i])
+          .text((d,i) => filterUnique[i])
         
            // Filter the data and make a new array with the filtered data
-           function changeYear(i) {
-            const filteredYear = data.filter(row => row.pricePerHour.slice(0, 4) == i)
-            console.log(filteredYear)
-            reassignDots(filteredYear);
+           function updatemap(i) {
+            const paymentmethods = data.filter(row => row.paymentmethod.slice(0, 4) == i)
+            console.log(paymentmethods)
+            reassignDots(paymentmethods);
           }
           
-          const resetBtn = select(".reset-button")
+          const resetBtn = select('.reset')
 
           resetBtn
-            .on("click", function() {
+            .on('click', () => {
               reassignDots(data)
               uncheckAllRadio()
             })
-        
+            
+            //reset check on boxes
             function uncheckAllRadio() {
-              const radioBtns = selectAll("input[type=radio]")
+              const radioBtns = selectAll('input[type=radio]')
               radioBtns
-                .property("checked", false)
+                .property('checked', false)
             }
 }
 

@@ -35371,7 +35371,7 @@ var tooltip = (0, _d.select)('body').append('div').style('position', 'absolute')
 exports.tooltip = tooltip;
 
 var handleMouseOver = function handleMouseOver(d, i) {
-  tooltip.append('p').text(i.areadesc + ' ' + i.paymentmethod), tooltip.style('visibility', 'visible');
+  tooltip.append('p').text("".concat(i.areadesc, " \u20AC ").concat(i.pricePerHour, " p/u")), tooltip.style('visibility', 'visible');
 };
 
 exports.handleMouseOver = handleMouseOver;
@@ -35458,53 +35458,54 @@ var dots = function dots(data) {
       return projection([d.location.longitude, d.location.latitude])[0];
     }).attr('cy', function (d) {
       return projection([d.location.longitude, d.location.latitude])[1];
-    }).on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut);
+    }).on('mouseover', _tooltipMouse.handleMouseOver).on('mousemove', _tooltipMouse.mouseMove).on('mouseout', _tooltipMouse.handleMouseOut).on('click', _showDetail.showDetail);
     dots.exit().remove();
   }
 
   var arraywithvalues = [];
-  data.forEach(function (element) {
-    arraywithvalues.push(element.pricePerHour.slice(0, 4));
+  data.forEach(function (el) {
+    arraywithvalues.push(el.paymentmethod.slice(0, 4));
   });
 
   var unique = function unique(value, index, self) {
     return self.indexOf(value) === index;
   };
 
-  var filteredUniqueValues = arraywithvalues.filter(unique);
-  filteredUniqueValues.sort(_d.ascending); // Make a div inside form for each year
+  var filterUnique = arraywithvalues.filter(unique);
+  filterUnique.sort(_d.ascending); // built in with D3
+  // Make a div inside form element for all payment methods
 
-  var form = (0, _d.select)('form').selectAll('div').data(filteredUniqueValues).enter().append('div').attr('class', 'radioBtn'); // inside the div make a input with the name of the year array
+  var form = (0, _d.select)('form').selectAll('div').data(filterUnique).enter().append('div').attr('class', 'radioBtn'); // Make radiobuttons inside the input form
 
   form.append('input').attr('type', 'radio').attr('name', 'Radio').attr('id', function (d, i) {
-    return filteredUniqueValues[i];
+    return filterUnique[i];
   }).on('change', function (d, i) {
-    changeYear(i);
+    updatemap(i); // Call function to reassing dots
   }); // inside the div make a label with the text of the year array
 
   form.append('label').attr('for', function (d, i) {
-    return filteredUniqueValues[i];
+    return filterUnique[i];
   }).text(function (d, i) {
-    return "\u20AC ".concat(filteredUniqueValues[i]);
+    return filterUnique[i];
   }); // Filter the data and make a new array with the filtered data
 
-  function changeYear(i) {
-    var filteredYear = data.filter(function (row) {
-      return row.pricePerHour.slice(0, 4) == i;
+  function updatemap(i) {
+    var paymentmethods = data.filter(function (row) {
+      return row.paymentmethod.slice(0, 4) == i;
     });
-    console.log(filteredYear);
-    reassignDots(filteredYear);
+    console.log(paymentmethods);
+    reassignDots(paymentmethods);
   }
 
-  var resetBtn = (0, _d.select)(".reset-button");
-  resetBtn.on("click", function () {
+  var resetBtn = (0, _d.select)('.reset');
+  resetBtn.on('click', function () {
     reassignDots(data);
     uncheckAllRadio();
-  });
+  }); //reset check on boxes
 
   function uncheckAllRadio() {
-    var radioBtns = (0, _d.selectAll)("input[type=radio]");
-    radioBtns.property("checked", false);
+    var radioBtns = (0, _d.selectAll)('input[type=radio]');
+    radioBtns.property('checked', false);
   }
 };
 
@@ -35515,16 +35516,18 @@ exports.dots = dots;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.render = void 0;
+exports.makeNewData = makeNewData;
 
 var _d = require("d3");
 
-var render = function render(index1, index2) {
+function makeNewData(index1, index2) {
   var arr = [];
   arr.push(index1);
   arr.push(index2);
-  (0, _d.selectAll)('.graph').remove(); // set the dimensions and margins of the graph
+  redraw(arr);
+}
 
+function redraw(receiveddata) {
   var margin = {
     top: 20,
     right: 5,
@@ -35540,19 +35543,18 @@ var render = function render(index1, index2) {
   svg.append('g').attr('transform', 'translate(0,' + height + ')').call((0, _d.axisBottom)(x)).selectAll('text').attr('transform', 'translate(-10,0)rotate(-45)').style('text-anchor', 'end');
   svg.append('text').attr('transform', 'translate(' + width / 2 + ' ,' + (height + margin.top + 40) + ')').attr('fill', '#FFFF').style('text-anchor', 'middle').text('prijs per uur'); // Y axis
 
-  var y = (0, _d.scaleBand)().range([0, height]).domain(arr.map(function (d) {
+  var y = (0, _d.scaleBand)().range([0, height]).domain(receiveddata.map(function (d) {
     return d.areadesc;
   })).padding(.1);
   svg.append('g').call((0, _d.axisLeft)(y)); //Bars
 
-  svg.selectAll('myRect').data(arr).enter().append('rect').attr('x', x(0)).attr('y', function (d) {
+  svg.selectAll('myRect').data(receiveddata).enter().append('rect').attr('x', x(0)).attr('y', function (d) {
     return y(d.areadesc);
   }).attr('width', function (d) {
     return x(d.pricePerHour);
   }).attr('height', y.bandwidth()).attr('fill', '#69b3a2');
-};
-
-exports.render = render;
+  (0, _d.selectAll)('myRect').exit().remove();
+}
 },{"d3":"../node_modules/d3/index.js"}],"scripts/modules/filter.js":[function(require,module,exports) {
 "use strict";
 
@@ -35587,11 +35589,10 @@ var filter = function filter(data) {
 
     if (!index2) {
       index2 = data[9];
-    }
+    } // index ? showDetail(d,index) : console.log('Not a valid index')
 
-    console.log(index1, index2); // index ? showDetail(d,index) : console.log('Not a valid index')
 
-    (0, _barChart.render)(index1, index2, data);
+    (0, _barChart.makeNewData)(index1, index2, data);
   });
   (0, _d.select)('.select').data(data).on('change', function (d, i) {
     var index = data[(0, _d.select)(_this).property('value')];
@@ -35616,7 +35617,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/44405f1b3a4de6099b901ba474c380b4/raw/b55532b92a5b6507bbc14f41dc876fc58a0cdf75/betaalmethode.json';
+var endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/44405f1b3a4de6099b901ba474c380b4/raw/7fe71a6ab4ef3f9d04e197054a7777c877b6ae6a/betaalmethode.json';
 
 function fetchData(_x) {
   return _fetchData.apply(this, arguments);
@@ -35686,7 +35687,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56668" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49169" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

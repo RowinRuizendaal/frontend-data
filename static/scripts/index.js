@@ -14,7 +14,7 @@ import { filter } from './modules/filter'
 
   
 
-  const endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/44405f1b3a4de6099b901ba474c380b4/raw/b55532b92a5b6507bbc14f41dc876fc58a0cdf75/betaalmethode.json';
+  const endPoint = 'https://gist.githubusercontent.com/RowinRuizendaal/44405f1b3a4de6099b901ba474c380b4/raw/7fe71a6ab4ef3f9d04e197054a7777c877b6ae6a/betaalmethode.json';
   
 
 async function fetchData(url) {
