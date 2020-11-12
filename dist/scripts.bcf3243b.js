@@ -35521,9 +35521,11 @@ exports.makeNewData = makeNewData;
 var _d = require("d3");
 
 function makeNewData(index1, index2) {
-  var arr = [];
-  arr.push(index1);
-  arr.push(index2);
+  var combine = [index1, index2];
+  var arr = combine.map(function (el) {
+    return el;
+  });
+  console.log(arr);
   redraw(arr);
 }
 
@@ -35546,14 +35548,24 @@ function redraw(receiveddata) {
   var y = (0, _d.scaleBand)().range([0, height]).domain(receiveddata.map(function (d) {
     return d.areadesc;
   })).padding(.1);
-  svg.append('g').call((0, _d.axisLeft)(y)); //Bars
+  svg.append('g').attr('class', 'axis axis-y').call((0, _d.axisLeft)(y)); // Bars
 
-  svg.selectAll('myRect').data(receiveddata).enter().append('rect').attr('x', x(0)).attr('y', function (d) {
+  svg.selectAll('myRect').data(receiveddata).enter().append('rect').attr('class', 'balk').attr('x', x(0)).attr('y', function (d) {
     return y(d.areadesc);
   }).attr('width', function (d) {
     return x(d.pricePerHour);
-  }).attr('height', y.bandwidth()).attr('fill', '#69b3a2');
-  (0, _d.selectAll)('myRect').exit().remove();
+  }).attr('height', y.bandwidth()).attr('fill', '#69b3a2'); //update
+
+  var bars = (0, _d.selectAll)('.balk').data(receiveddata);
+  bars.attr('x', x(0)).attr('y', function (d) {
+    return y(d.areadesc);
+  }).attr('width', function (d) {
+    return x(d.pricePerHour);
+  }).attr('height', y.bandwidth()); //EXIT
+
+  bars.exit().remove(); // reset y axis
+
+  (0, _d.select)('.axis-y').call((0, _d.axisLeft)(y));
 }
 },{"d3":"../node_modules/d3/index.js"}],"scripts/modules/filter.js":[function(require,module,exports) {
 "use strict";
@@ -35687,7 +35699,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49169" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60561" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

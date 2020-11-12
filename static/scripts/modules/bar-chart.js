@@ -6,21 +6,25 @@ import {
     axisLeft,
     axisBottom,
     max,
-    selectorAll,
+    transition,
+    group
 
 } from 'd3';
 
 
 
 export function makeNewData(index1, index2) {
-    const arr = []
-    arr.push(index1)
-    arr.push(index2)
+    const combine = [index1, index2]
+    const arr = combine.map((el) => {
+        return el
+    })
 
+    console.log(arr)
     redraw(arr)
 }
 
 function redraw(receiveddata) {
+
     const margin = {
             top: 20,
             right: 5,
@@ -38,7 +42,8 @@ function redraw(receiveddata) {
         .attr('class', 'graph')
         .append('g')
         .attr('transform',
-            'translate(' + margin.left + ',' + margin.top + ')');
+            'translate(' + margin.left + ',' + margin.top + ')')
+
 
     // Add X axis
     const x = scaleLinear()
@@ -66,25 +71,47 @@ function redraw(receiveddata) {
         .domain(receiveddata.map(function (d) {
             return d.areadesc
         }))
-        .padding(.1);
+        .padding(.1)
     svg.append('g')
+        .attr('class', 'axis axis-y')
         .call(axisLeft(y))
 
-    //Bars
-        svg.selectAll('myRect')
-            .data(receiveddata)
-            .enter()
-            .append('rect')
-            .attr('x', x(0))
-            .attr('y', function (d) {
-                return y(d.areadesc);
-            })
-            .attr('width', function (d) {
-                return x(d.pricePerHour);
-            })
-            .attr('height', y.bandwidth())
-            .attr('fill', '#69b3a2')
+    // Bars
+    svg.selectAll('myRect')
+        .data(receiveddata)
+        .enter()
+        .append('rect')
+        .attr('class', 'balk')
+        .attr('x', x(0))
+        .attr('y', function (d) {
+            return y(d.areadesc);
+        })
+        .attr('width', function (d) {
+            return x(d.pricePerHour);
+        })
+        .attr('height', y.bandwidth())
+        .attr('fill', '#69b3a2')
 
-         selectAll('myRect').exit().remove()  
 
+    //update
+    const bars = selectAll('.balk').data(receiveddata)
+
+    bars
+        .attr('x', x(0))
+        .attr('y', function (d) {
+            return y(d.areadesc);
+        })
+        .attr('width', function (d) {
+            return x(d.pricePerHour);
+        })
+        .attr('height', y.bandwidth())
+
+
+
+    //EXIT
+    bars.exit()
+        .remove()
+        // reset y axis
+        select('.axis-y')
+              .call(axisLeft(y))
 }
