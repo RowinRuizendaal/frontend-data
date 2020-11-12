@@ -1,31 +1,33 @@
 {
-  "name": "frontend-data",
+  "name": "functional-programming",
   "version": "1.0.0",
-  "description": "",
+  "description": "HVA functional-programming",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel static/index.html",
-    "build": "parcel build static/index.html"
+    "dev": "nodemon index.js",
+    "lint": "eslint --fix --ext .js ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RowinRuizendaal/frontend-data.git"
+    "url": "git+https://github.com/RowinRuizendaal/functional-programming.git"
   },
-  "author": "RowinRuizendaal",
-  "license": "MIT",
+  "author": "Rowin Ruizendaal",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RowinRuizendaal/frontend-data/issues"
+    "url": "https://github.com/RowinRuizendaal/functional-programming/issues"
   },
-  "homepage": "https://github.com/RowinRuizendaal/frontend-data#readme",
+  "homepage": "https://github.com/RowinRuizendaal/functional-programming#readme",
   "dependencies": {
     "axios": "^0.21.0",
-    "d3": "^6.2.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "nodemon": "^2.0.6",
-    "topojson": "^3.0.2"
+    "moment": "^2.29.1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "eslint": "^7.11.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.6"
   }
 }

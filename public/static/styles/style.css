@@ -1,0 +1,31 @@
+body {
+	margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #1A1F2B;
+} 
+
+path {
+  fill: #0B0909;
+  stroke: #FFFFFF;
+  stroke-opacity: 0.1; 
+}
+
+.map {
+    margin-right: 20rem;
+}
+
+.navigation {
+    height: 100vh;
+    width: 100%;
+    background: white;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 70%;
+    background: #1D212B;
+    z-index: 9999;
+    top: 0;
+    position: fixed;
+
+}
