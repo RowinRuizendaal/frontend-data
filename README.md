@@ -73,6 +73,12 @@ npm run lint
 ![Sketches](https://raw.githubusercontent.com/wiki/RowinRuizendaal/functional-programming/assets/sketches.png)
 
 
+### Final product
+
+![final](https://raw.githubusercontent.com/wiki/RowinRuizendaal/functional-programming/assets/final.PNG)
+
+![final2](https://raw.githubusercontent.com/wiki/RowinRuizendaal/functional-programming/assets/final-2.png)
+
 ### License
 
 Authtor: [RowinRuizendaal](https://github.com/rowinruizendaal), license: [MIT](https://github.com/RowinRuizendaal/functional-programming/blob/Master/LICENSE)
@@ -81,6 +87,13 @@ Authtor: [RowinRuizendaal](https://github.com/rowinruizendaal), license: [MIT](h
 ### Credits
 
 [vuurvos1](https://github.com/vuurvos1) For the good coding talks in Discord ༼ つ ◕_◕ ༽つ and the helpfull help
+
+[sreen020](https://github.com/sreen020/) For working together in Vizhub
+
+
+### Vizhub tries
+
+[Vizhub](https://vizhub.com/RowinRuizendaal)
 
 
 ### Resources
