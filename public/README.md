@@ -1,4 +1,4 @@
-# Functional-programming
+# frontend-data
 
 
 ## Volkskrant assignment
